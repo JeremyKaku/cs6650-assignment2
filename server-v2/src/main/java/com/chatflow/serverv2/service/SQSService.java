@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class SQSService {
 
   private static final Logger logger = LoggerFactory.getLogger(SQSService.class);
-  private static final int POOL_SIZE = 10;
+  private static final int POOL_SIZE = 20;
   private static final int MAX_RETRIES = 3;
   private static final long CIRCUIT_BREAKER_TIMEOUT_MS = 30000;
 
