@@ -1,0 +1,218 @@
+{
+    "widgets": [
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 0,
+            "width": 24,
+            "height": 8,
+            "properties": {
+                "metrics": [
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-1.fifo", { "id": "m1", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-2.fifo", { "id": "m2", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-3.fifo", { "id": "m3", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-4.fifo", { "id": "m4", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-5.fifo", { "id": "m5", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-6.fifo", { "id": "m6", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-7.fifo", { "id": "m7", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-8.fifo", { "id": "m8", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-9.fifo", { "id": "m9", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-10.fifo", { "id": "m10", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-11.fifo", { "id": "m11", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-12.fifo", { "id": "m12", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-13.fifo", { "id": "m13", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-14.fifo", { "id": "m14", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-15.fifo", { "id": "m15", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-16.fifo", { "id": "m16", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-17.fifo", { "id": "m17", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-18.fifo", { "id": "m18", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-19.fifo", { "id": "m19", "stat": "Average" } ],
+                    [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "chatflow-room-20.fifo", { "id": "m20", "stat": "Average" } ],
+                    [ { "expression": "(m1+m2+m3+m4+m5+m6+m7+m8+m9+m10+m11+m12+m13+m14+m15+m16+m17+m18+m19+m20)/20", "label": "Average Queue Depth (All Rooms)", "id": "e1" } ]
+                ],
+                "period": 60,
+                "region": "us-west-2",
+                "title": "Average Queue Depth - All Chatflow Rooms",
+                "view": "timeSeries",
+                "yAxis": {
+                    "left": {
+                        "min": 0
+                    }
+                },
+                "legend": {
+                    "position": "bottom"
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 18,
+            "width": 24,
+            "height": 8,
+            "properties": {
+                "metrics": [
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-1.fifo", { "id": "s1", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-1.fifo", { "id": "r1", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-2.fifo", { "id": "s2", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-2.fifo", { "id": "r2", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-3.fifo", { "id": "s3", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-3.fifo", { "id": "r3", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-4.fifo", { "id": "s4", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-4.fifo", { "id": "r4", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-5.fifo", { "id": "s5", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-5.fifo", { "id": "r5", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-6.fifo", { "id": "s6", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-6.fifo", { "id": "r6", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-7.fifo", { "id": "s7", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-7.fifo", { "id": "r7", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-8.fifo", { "id": "s8", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-8.fifo", { "id": "r8", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-9.fifo", { "id": "s9", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-9.fifo", { "id": "r9", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-10.fifo", { "id": "s10", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-10.fifo", { "id": "r10", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-11.fifo", { "id": "s11", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-11.fifo", { "id": "r11", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-12.fifo", { "id": "s12", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-12.fifo", { "id": "r12", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-13.fifo", { "id": "s13", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-13.fifo", { "id": "r13", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-14.fifo", { "id": "s14", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-14.fifo", { "id": "r14", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-15.fifo", { "id": "s15", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-15.fifo", { "id": "r15", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-16.fifo", { "id": "s16", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-16.fifo", { "id": "r16", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-17.fifo", { "id": "s17", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-17.fifo", { "id": "r17", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-18.fifo", { "id": "s18", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-18.fifo", { "id": "r18", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-19.fifo", { "id": "s19", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-19.fifo", { "id": "r19", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesSent", "QueueName", "chatflow-room-20.fifo", { "id": "s20", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-20.fifo", { "id": "r20", "stat": "Sum" } ],
+                    [ { "expression": "(s1+s2+s3+s4+s5+s6+s7+s8+s9+s10+s11+s12+s13+s14+s15+s16+s17+s18+s19+s20)/20", "label": "Average Publish Rate (All Rooms)", "id": "e_pub" } ],
+                    [ { "expression": "(r1+r2+r3+r4+r5+r6+r7+r8+r9+r10+r11+r12+r13+r14+r15+r16+r17+r18+r19+r20)/20", "label": "Average Consume Rate (All Rooms)", "id": "e_cons" } ]
+                ],
+                "period": 60,
+                "region": "us-west-2",
+                "title": "Message Rates (Publish / Consume)",
+                "view": "timeSeries",
+                "yAxis": {
+                    "left": {
+                        "label": "Messages / min"
+                    }
+                },
+                "legend": {
+                    "position": "bottom"
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 8,
+            "width": 24,
+            "height": 10,
+            "properties": {
+                "metrics": [
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-1.fifo", { "id": "r1", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-1.fifo", { "id": "d1", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-1.fifo", { "id": "e1", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-2.fifo", { "id": "r2", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-2.fifo", { "id": "d2", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-2.fifo", { "id": "e2", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-3.fifo", { "id": "r3", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-3.fifo", { "id": "d3", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-3.fifo", { "id": "e3", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-4.fifo", { "id": "r4", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-4.fifo", { "id": "d4", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-4.fifo", { "id": "e4", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-5.fifo", { "id": "r5", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-5.fifo", { "id": "d5", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-5.fifo", { "id": "e5", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-6.fifo", { "id": "r6", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-6.fifo", { "id": "d6", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-6.fifo", { "id": "e6", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-7.fifo", { "id": "r7", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-7.fifo", { "id": "d7", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-7.fifo", { "id": "e7", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-8.fifo", { "id": "r8", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-8.fifo", { "id": "d8", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-8.fifo", { "id": "e8", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-9.fifo", { "id": "r9", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-9.fifo", { "id": "d9", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-9.fifo", { "id": "e9", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-10.fifo", { "id": "r10", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-10.fifo", { "id": "d10", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-10.fifo", { "id": "e10", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-11.fifo", { "id": "r11", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-11.fifo", { "id": "d11", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-11.fifo", { "id": "e11", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-12.fifo", { "id": "r12", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-12.fifo", { "id": "d12", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-12.fifo", { "id": "e12", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-13.fifo", { "id": "r13", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-13.fifo", { "id": "d13", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-13.fifo", { "id": "e13", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-14.fifo", { "id": "r14", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-14.fifo", { "id": "d14", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-14.fifo", { "id": "e14", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-15.fifo", { "id": "r15", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-15.fifo", { "id": "d15", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-15.fifo", { "id": "e15", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-16.fifo", { "id": "r16", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-16.fifo", { "id": "d16", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-16.fifo", { "id": "e16", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-17.fifo", { "id": "r17", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-17.fifo", { "id": "d17", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-17.fifo", { "id": "e17", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-18.fifo", { "id": "r18", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-18.fifo", { "id": "d18", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-18.fifo", { "id": "e18", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-19.fifo", { "id": "r19", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-19.fifo", { "id": "d19", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-19.fifo", { "id": "e19", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName", "chatflow-room-20.fifo", { "id": "r20", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfMessagesDeleted", "QueueName", "chatflow-room-20.fifo", { "id": "d20", "stat": "Sum" } ],
+                    [ "AWS/SQS", "NumberOfEmptyReceives", "QueueName", "chatflow-room-20.fifo", { "id": "e20", "stat": "Sum" } ],
+                    [ { "expression": "(r1+r2+r3+r4+r5+r6+r7+r8+r9+r10+r11+r12+r13+r14+r15+r16+r17+r18+r19+r20)/20", "label": "Avg ReceiveMessage Calls", "id": "avg_r" } ],
+                    [ { "expression": "(d1+d2+d3+d4+d5+d6+d7+d8+d9+d10+d11+d12+d13+d14+d15+d16+d17+d18+d19+d20)/20", "label": "Avg DeleteMessage Calls", "id": "avg_d" } ],
+                    [ { "expression": "(e1+e2+e3+e4+e5+e6+e7+e8+e9+e10+e11+e12+e13+e14+e15+e16+e17+e18+e19+e20)/20", "label": "Avg EmptyReceives", "id": "avg_e" } ]
+                ],
+                "period": 300,
+                "region": "us-west-2",
+                "title": "SQS Connection Details (20 Chatflow Queues)",
+                "view": "timeSeries",
+                "legend": {
+                    "position": "bottom"
+                },
+                "yAxis": {
+                    "left": {
+                        "label": "API Calls / 5 min"
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 26,
+            "width": 24,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [ "AWS/Usage", "CallCount", "Resource", "sqs.amazonaws.com", { "label": "Total SQS API Calls", "stat": "Sum" } ]
+                ],
+                "period": 300,
+                "region": "us-west-2",
+                "title": "🌐 Total SQS API Call Activity (Simulated Connection Volume)",
+                "view": "timeSeries",
+                "legend": {
+                    "position": "bottom"
+                }
+            }
+        }
+    ]
+}
