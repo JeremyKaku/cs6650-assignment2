@@ -5,7 +5,7 @@ Complete implementation of a scalable chat system using Spring Boot, AWS SQS, an
 ## Project Structure
 
 ```
-assignment2/
+cs6650-assignment2/
 │
 ├── server-v2/                          # WebSocket Server with SQS
 │   ├── src/main/java/com/chatflow/server/
