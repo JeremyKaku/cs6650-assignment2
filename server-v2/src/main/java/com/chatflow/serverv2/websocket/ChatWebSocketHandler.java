@@ -23,7 +23,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * WebSocket handler that publishes messages to SQS instead of echoing.
+ * WebSocket handler that publishes messages to SQS and broadcasts to room clients.
  */
 @Component
 public class ChatWebSocketHandler extends TextWebSocketHandler {
@@ -43,6 +43,7 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
   private final Counter messagesReceived;
   private final Counter validationErrors;
   private final Counter queuePublishErrors;
+  private final Counter messagesBroadcasted;
 
   @Autowired
   public ChatWebSocketHandler(SQSService sqsService, MeterRegistry meterRegistry) {
@@ -55,6 +56,9 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
         .register(meterRegistry);
     this.queuePublishErrors = Counter.builder("websocket.queue.publish.errors")
         .description("Messages that failed to publish to queue")
+        .register(meterRegistry);
+    this.messagesBroadcasted = Counter.builder("websocket.messages.broadcasted")
+        .description("Messages broadcasted to clients")
         .register(meterRegistry);
   }
 
@@ -113,6 +117,72 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
       queuePublishErrors.increment();
       sendError(session, "QUEUE_ERROR", "Failed to publish message to queue");
       logger.error("Failed to publish message from session {} to queue", session.getId());
+    }
+  }
+
+  /**
+   * NEW METHOD: Broadcasts a message to all clients in a room.
+   * Called by BroadcastController when Consumer requests broadcast.
+   *
+   * @param queueMessage The message to broadcast
+   * @return Number of clients that received the message
+   */
+  public int broadcastToRoom(QueueMessage queueMessage) {
+    Map<String, WebSocketSession> roomSessions = rooms.get(queueMessage.getRoomId());
+
+    if (roomSessions == null || roomSessions.isEmpty()) {
+      logger.debug("No active sessions in room {}", queueMessage.getRoomId());
+      return 0;
+    }
+
+    try {
+      // Create broadcast message
+      ChatMessage broadcastMsg = new ChatMessage();
+      broadcastMsg.setUserId(queueMessage.getUserId());
+      broadcastMsg.setUsername(queueMessage.getUsername());
+      broadcastMsg.setMessage(queueMessage.getMessage());
+      broadcastMsg.setTimestamp(queueMessage.getTimestamp());
+      broadcastMsg.setMessageType(queueMessage.getMessageType());
+      broadcastMsg.setServerTimestamp(Instant.now().toString());
+      broadcastMsg.setStatus("OK");
+
+      String json = mapper.writeValueAsString(broadcastMsg);
+      TextMessage textMessage = new TextMessage(json);
+
+      int successCount = 0;
+      int failureCount = 0;
+
+      // Broadcast to all sessions in room
+      for (WebSocketSession session : roomSessions.values()) {
+        try {
+          if (session.isOpen()) {
+            session.sendMessage(textMessage);
+            successCount++;
+            messagesBroadcasted.increment();
+          } else {
+            // Clean up closed sessions
+            roomSessions.remove(session.getId());
+            logger.debug("Removed closed session {} from room {}",
+                session.getId(), queueMessage.getRoomId());
+          }
+        } catch (Exception e) {
+          failureCount++;
+          logger.error("Failed to send message to session {} in room {}: {}",
+              session.getId(), queueMessage.getRoomId(), e.getMessage());
+          // Remove problematic session
+          roomSessions.remove(session.getId());
+        }
+      }
+
+      logger.debug("Broadcasted message to room {}. Success: {}, Failed: {}",
+          queueMessage.getRoomId(), successCount, failureCount);
+
+      return successCount;
+
+    } catch (Exception e) {
+      logger.error("Error creating broadcast message for room {}: {}",
+          queueMessage.getRoomId(), e.getMessage(), e);
+      return 0;
     }
   }
 
